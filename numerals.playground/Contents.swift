@@ -1,9 +1,6 @@
 //: Playground - noun: a place where people can play
 
-import UIKit
-
-var str = "Hello, playground2"
-
+//MARK:- convenience extensions
 
 extension String {
     
@@ -24,6 +21,7 @@ extension String {
     }
 }
 
+
 extension Character{
     var numeral:Numeral {
         get {
@@ -43,15 +41,6 @@ extension Character{
     }
 }
 
-enum Numeral : Int {
-    case I = 1
-    case V = 5
-    case X = 10
-    case L = 50
-    case C = 100
-    case D = 500
-    case M = 1000
-}
 
 extension Array {
     func components()->[[Numeral]]{
@@ -92,6 +81,19 @@ extension Array {
         return f.rawValue
     }
 }
+
+//MARK:- An enum representing a roman numeral
+
+enum Numeral : Int {
+    case I = 1
+    case V = 5
+    case X = 10
+    case L = 50
+    case C = 100
+    case D = 500
+    case M = 1000
+}
+
 
 func parse(numeralString:String)->Int{
     
@@ -134,10 +136,5 @@ assert("IX".romanValue==9)
 assert("XXIV".romanValue==24)
 assert("DCCCXC".romanValue==890)
 assert("XCIX".romanValue==99)
-
-
-
-
-
 
 
